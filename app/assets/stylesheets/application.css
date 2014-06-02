@@ -10,6 +10,15 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require legacy/animate.min.css
+ *= require legacy/ie7.css
+ *= require legacy/ie8.css
+ *= require legacy/jquery.sidr.light.css
+ *= require legacy/md-slider.css
+ *= require legacy/normalize.css
+ *= require legacy/responsive.css
+ *= require legacy/responsiveslides.css
+ *= require legacy/style.css
  *= require_tree .
  *= require_self
  */
