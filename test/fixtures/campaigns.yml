@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  goal: 1
+  start: 2014-06-01 22:24:28
+  end: 2014-06-01 22:24:28
+  gpa: 9.99
+  title: MyString
+  body: MyString
+  user_id: 
+
+two:
+  goal: 1
+  start: 2014-06-01 22:24:28
+  end: 2014-06-01 22:24:28
+  gpa: 9.99
+  title: MyString
+  body: MyString
+  user_id: 
