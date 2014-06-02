@@ -1,4 +1,32 @@
 Rails.application.routes.draw do
+  get 'videos/new'
+
+  get 'videos/create'
+
+  get 'videos/edit'
+
+  get 'videos/update'
+
+  get 'videos/destroy'
+
+  get 'donations/new'
+
+  get 'donations/create'
+
+  get 'campaigns/new'
+
+  get 'campaigns/create'
+
+  get 'campaigns/update'
+
+  get 'campaigns/edit'
+
+  get 'campaigns/destroy'
+
+  get 'campaigns/index'
+
+  get 'campaigns/show'
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root 'welcome#index'
 
