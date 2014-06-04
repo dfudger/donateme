@@ -1,2 +1,14 @@
-<h1>Campaigns#new</h1>
-<p>Find me in app/views/campaigns/new.html.erb</p>
+<div class="row">
+  <div class="small-12 columns">
+
+    <h1>New Campaign</h1>
+
+    <%= form_for :campaign, url: campaigns_path do |f| %>
+
+      <%= render :partial => "form", :locals => {:f => f} %>
+
+      <%= f.submit :class => 'button right' %>
+      
+    <% end %>
+  </div>
+</div>
