@@ -92,16 +92,11 @@
             </div>
         </header><!--end: #header -->
 
-        <div class="container_12 clearfix">
-            <div class="grid_12">
+        <%= yield %>
 
-                <%= yield %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
 
-                 <p class="notice"><%= notice %></p>
-                 <p class="alert"><%= alert %></p>
-
-            </div>
-        </div>
 
          <footer id="footer">
             <div class="copyright">
