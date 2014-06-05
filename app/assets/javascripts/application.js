@@ -13,4 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//
+//= require legacy/jquery-migrate-1.2.1.min.js
+//= require legacy/jquery.sidr.min.js
+//= require legacy/jquery.touchwipe.min.js
+//= require legacy/jquery.tweet.min.js
+//= require legacy/md_slider.min.js
+//= require legacy/pie.js
+//= require legacy/raphael-min.js
+//= require legacy/script.js
+//
 //= require_tree .
