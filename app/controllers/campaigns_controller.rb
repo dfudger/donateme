@@ -33,11 +33,11 @@ class CampaignsController < ApplicationController
   end
 
   def index
-    @campaigns = Campaign.find(:all)
+    @campaigns = Campaign.all
   end
 
   def show
     @campaign = Campaign.find(params[:id])
-    @videos = @Campaign.videos
+    @videos = @campaign.videos
   end
 end

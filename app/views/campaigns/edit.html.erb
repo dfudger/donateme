@@ -1,2 +1,13 @@
-<h1>Campaigns#edit</h1>
-<p>Find me in app/views/campaigns/edit.html.erb</p>
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Edit Campaign</h1>
+    <%= form_for :campaign, url: campaign_path(@campaign), method: :patch do |f| %>
+
+      <%= render :partial => "form", :locals => {:f => f} %>
+
+      <div>
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>

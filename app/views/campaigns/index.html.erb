@@ -1,2 +1,8 @@
-<h1>Campaigns#index</h1>
-<p>Find me in app/views/campaigns/index.html.erb</p>
+<h1>Campaigns</h1>
+
+<div class="row">
+  <% @campaigns.each.with_index do |campaign,index| %>
+      <%= campaign.title %>
+      <br>
+  <% end %>
+</div>
