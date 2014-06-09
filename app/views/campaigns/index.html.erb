@@ -1,6 +1,8 @@
 <h1>Campaigns</h1>
 
 <div class="row">
+  <%= link_to("Admins", admins_path) if current_user.try(:is_admin?) %>
+
   <% @campaigns.each.with_index do |campaign,index| %>
       <%= campaign.title %>
       <br>

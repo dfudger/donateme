@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, 
+         :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
 	 def self.find_for_facebook_oauth(auth)
@@ -15,5 +15,9 @@ class User < ActiveRecord::Base
 	    #user.image = auth.info.image # assuming the user model has an image
 	  end
 	end
+
+  def is_admin?
+    [2].include?(group)
+  end
 
 end

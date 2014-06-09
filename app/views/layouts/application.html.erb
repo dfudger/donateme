@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= link_to("Admins", admins_path) if current_user.try(:is_admin?) %>
 <div id="wrapper">
      <header id="header">
             <div class="wrap-top-menu">

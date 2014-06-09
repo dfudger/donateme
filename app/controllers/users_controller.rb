@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-    if @user.update(params[:user].permit(:type, :name, :city, :school))
+    if @user.update(params[:user].permit(:group, :name, :city, :school))
     @user.save
       redirect_to root_url
     else
