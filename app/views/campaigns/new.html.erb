@@ -1,14 +1,20 @@
-<div class="row">
-  <div class="small-12 columns">
+<div class="layout-2cols">
+    <div class="content grid_8">
+        <div class="single-page">
+            <div class="wrapper-box box-post-comment">
+                <h2 class="common-title">New Campaign</h2>
+                <div class="box-white">
+                    <%= form_for :campaign, url: campaigns_path do |f| %>
+                        <%= render :partial => "form", :locals => {:f => f} %>
 
-    <h1>New Campaign</h1>
-
-    <%= form_for :campaign, url: campaigns_path do |f| %>
-
-      <%= render :partial => "form", :locals => {:f => f} %>
-
-      <%= f.submit :class => 'button right' %>
-      
-    <% end %>
-  </div>
+                        <p class="rs ta-r clearfix">
+                            <span id="response"></span>
+                            <%= f.submit "Submit", :class => 'btn btn-white btn-submit-comment' %>
+                        </p>
+                    <% end %>
+                </div>
+            </div><!--end: .box-list-comment -->
+        </div>
+    </div><!--end: .content -->
+    <div class="clear"></div>
 </div>

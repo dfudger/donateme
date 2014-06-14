@@ -83,7 +83,7 @@
   width: 100%;
   margin: 0 auto;
   height: 100%;
-	
+
 }
 .md-object {
   position: absolute;
@@ -129,23 +129,23 @@
   width: 0;
 }
 .loading-bar-hoz .br-timer-glow {
-	background: url("../images/slider/light-timer-glow.png") repeat scroll 0 0 transparent; 
-	height: 7px; 
-	width: 104px; 
-	position:absolute; 
-	top:-4px; 
+	background: url("../images/slider/light-timer-glow.png") repeat scroll 0 0 transparent;
+	height: 7px;
+	width: 104px;
+	position:absolute;
+	top:-4px;
 	z-index: 2;
 }
-.loading-bar-hoz .br-timer-bar { 
-	background-color: white; 
-	height: 2px; 
-	position: absolute; 
+.loading-bar-hoz .br-timer-bar {
+	background-color: white;
+	height: 2px;
+	position: absolute;
 	z-index: 1;
 }
 /* arrow */
 .md-arrow-left,
 .md-arrow-right {
-  background: url(../images/slider/md-arrow.png) no-repeat 0 0;
+  background: url('/assets/slider/md-arrow.png') no-repeat 0 0;
   width: 33px;
   height: 34px;
   position: absolute;
@@ -319,20 +319,20 @@
 }
 /* video object */
 .md-video-control {
-	position: absolute; 
-	top: 0; 
-	left: 0; 
-	right: 0; 
-	bottom: 0; 
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	z-index: 50
 }
 .md-close-video {
-	position: absolute; 
-	top: 0; 
-	right: 0; 
-	z-index: 51; 
-	width: 30px; 
-	height: 30px; 
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 51;
+	width: 30px;
+	height: 30px;
 	background: url(../images/slider/md-close-video.png) #000 no-repeat center center;
 }
 .md-video {
@@ -565,7 +565,7 @@
   right: 2px;
 }
 .entry-content .md-object img {box-shadow: none; border-radius: 0;}
-@media screen and (max-width: 760px) { 
+@media screen and (max-width: 760px) {
 	.md-video .md-playbtn {
 	  width: 15%;
 	  height: 18%;
