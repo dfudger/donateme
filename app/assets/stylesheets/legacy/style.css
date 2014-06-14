@@ -352,8 +352,8 @@ a.fc-gray-dark,.fc-gray-dark{color: #999}
     background: -ms-linear-gradient(top,  #ec5843 0%,#e84837 100%); /* IE10+ */
     background: linear-gradient(top,  #ec5843 0%,#e84837 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec5843', endColorstr='#e84837',GradientType=0 ); /* IE6-9 */
-    
-    
+
+
 }
 .btn-red-edit{width: 100%;}
 .btn-red:hover{
@@ -832,7 +832,7 @@ a.fc-gray-dark,.fc-gray-dark{color: #999}
 
 /* 6.	Icon
 --------------------------------------------------------------------------------*/
-.icon{background: transparent url("../images/icon.png?v=0.1121989") no-repeat;border: none;display: inline-block;*display: inline;*zoom: 1;}
+.icon{background: transparent url("/assets/icon.png") no-repeat;border: none;display: inline-block;*display: inline;*zoom: 1;}
     .iMagnifier        {width:16px;height:16px;background-position: 0 0}
     .iCalendar         {width:16px;height:16px;background-position: -16px 0}
     .iClock            {width:16px;height:16px;background-position: -32px 0}
@@ -1016,7 +1016,7 @@ a.fc-gray-dark,.fc-gray-dark{color: #999}
     display: block;
     line-height: 0;
     float: left;
-    width: 51.68141592920354%; 
+    width: 51.68141592920354%;
     padding: 0.7079646017699115%;
     /*margin-right: 3.008849557522124%;*/
     /*width: 292px;
@@ -1073,8 +1073,8 @@ a.fc-gray-dark,.fc-gray-dark{color: #999}
 }
 .project-short .project-progress{
     margin: 10px 30px;
-    /*background: url("../images/progress.png") no-repeat center center;*/
-    background: url("../images/bg-s-out.png") no-repeat center center;
+    /*background: url("/assets/progress.png") no-repeat center center;*/
+    background: url("/assets//bg-s-out.png") no-repeat center center;
     float: left;
     width: 78px;
     height: 78px;
@@ -1092,7 +1092,7 @@ a.fc-gray-dark,.fc-gray-dark{color: #999}
     position: absolute;
     top: 9px;
     left: 8px;
-    background: url("../images/bg-s-in.png") no-repeat;
+    background: url("/assets/bg-s-in.png") no-repeat;
     width: 62px;
     height: 62px;
     line-height: 62px;
@@ -1497,7 +1497,7 @@ a.fc-gray-dark,.fc-gray-dark{color: #999}
 /* 11.	Page: Home
 --------------------------------------------------------------------------------*/
 #home-slider p {
-	margin: 0	
+	margin: 0
 }
 #home-slider .slide-item{
     float: left;
@@ -1526,7 +1526,7 @@ a.fc-gray-dark,.fc-gray-dark{color: #999}
 	color: #fff
 }
 .slide-with-background {
-	background:url(../images/slide-item-bg.png) repeat 0 0;	
+	background:url('/assets/slide-item-bg.png') repeat 0 0;
 }
 #home-slider .md-bullet{
     cursor: pointer;

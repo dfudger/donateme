@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  #Authientication
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
   #/campaigns/1/videos/
   resources :admins
   resources :users
@@ -8,10 +11,8 @@ Rails.application.routes.draw do
     resources :videos
   end
 
-  #Authientication
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   root 'welcome#index'
-
+  get '/about', to: 'welcome#about'
 
 end

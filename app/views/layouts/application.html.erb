@@ -37,7 +37,7 @@
                                     <li><a href="/">Home</a></li>
                                     <!-- <li><a href="all-pages.html">All Pages</a></li> -->
                                     <!-- <li><a href="how-it-work.html">Help</a></li> -->
-                                    <li><a href="contact.php">Get Invite</a></li>
+                                    <li><a href="/about">About</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -45,7 +45,7 @@
                             <i class="icon iFolder"></i>
                             <!-- <span class="txt-message">Logged in as </span> -->
                             <i class="icon iX"></i>
-                            <div class="clear"><?php echo $_SESSION['user_name']; ?></div>
+                            <div class="clear"><%= user.full_name if user_signed_in? %></div>
                         </div>
 
                         <i id="sys_btn_toggle_search" class="icon iBtnRed make-right"></i>
@@ -56,37 +56,22 @@
                 <div class="grid_12 header-content">
                     <div id="sys_header_right" class="header-right">
                         <div class="account-panel">
-                        <!--   <a href="contactus.php" class="btn btn-red sys_show_popup_login">Start Project</a> -->
+                            <!--   <a href="contactus.php" class="btn btn-red sys_show_popup_login">Start Project</a> -->
                             <!-- <a href="#" class="btn btn-black sys_show_popup_login">Login</a> -->
-                        <a href="#" class="btn btn-red-edit btn-red">Register as Student</a>
-
+                            <% if user_signed_in? %>
+                                <%= link_to current_user.full_name, '#', :class => "btn btn-red-edit btn-red" %>
+                            <% else %>
+                                <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), :class => "btn btn-red-edit btn-blue" %>
+                            <% end %>
                         </div>
-                        <div class="form-search">
-                            <!-- <form action="#">
-                                <label for="sys_txt_keyword">
-                                    <input id="sys_txt_keyword" class="txt-keyword" type="text" placeholder="Search projects"/>
-                                </label>
-                                <button class="btn-search" type="reset"><i class="icon iMagnifier"></i></button>
-                                <button class="btn-reset-keyword" type="reset"><i class="icon iXHover"></i></button>
-                            </form> -->
-                        </div>
-                    </div                <div class="header-left">
-                        <h1 id="logo">
-                            <%= image_tag "logo.png", :alt => "DonateMe" %>
-                        </h1>
-                        <div class="main-nav clearfix">
-                            <!-- <div class="nav-item">
-                                <a href="category.html" class="nav-title">Discover</a>
-                                <p class="rs nav-description">Great Students</p>
-                            </div> -->
-
-
-                            <!-- <span class="sep"></span> -->
-                            <!-- commented out for minimizng -->
-                            <div class="nav-item">
-                                <a href="faq.php" class="nav-title">____________</a>
-                                <a href="faq.php"><p class="rs nav-description nav-title">About</p></a>
-                            </div>
+                    </div>
+                    <h1 id="logo">
+                        <%= link_to image_tag("logo.png", :alt => "DonateMe"), root_path %>
+                    </h1>
+                    <div class="main-nav clearfix">
+                        <div class="nav-item">
+                            <a href="about" class="nav-title">______</a>
+                            <a href="about"><p class="rs nav-description nav-title">About</p></a>
                         </div>
                     </div>
                 </div>
