@@ -45,7 +45,7 @@
                             <i class="icon iFolder"></i>
                             <!-- <span class="txt-message">Logged in as </span> -->
                             <i class="icon iX"></i>
-                            <div class="clear"><%= user.full_name if user_signed_in? %></div>
+                            <div class="clear"><%= current_user.name if user_signed_in? %></div>
                         </div>
 
                         <i id="sys_btn_toggle_search" class="icon iBtnRed make-right"></i>
@@ -59,7 +59,7 @@
                             <!--   <a href="contactus.php" class="btn btn-red sys_show_popup_login">Start Project</a> -->
                             <!-- <a href="#" class="btn btn-black sys_show_popup_login">Login</a> -->
                             <% if user_signed_in? %>
-                                <%= link_to current_user.full_name, '#', :class => "btn btn-red-edit btn-red" %>
+                                <%= link_to current_user.name, '#', :class => "btn btn-red-edit btn-red" %>
                             <% else %>
                                 <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), :class => "btn btn-red-edit btn-blue" %>
                             <% end %>

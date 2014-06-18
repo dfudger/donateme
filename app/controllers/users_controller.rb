@@ -4,10 +4,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user].permit(:type, :name, :city, :school))
+    @user = User.new(params[:user].permit(:group, :name, :city, :school))
     @user.save
     redirect_to root_url
-  end
+  end  
 
   def update
     @user = User.find(params[:id])
