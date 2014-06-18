@@ -1,50 +1,45 @@
 <div class="row">
   <div class="small-12 columns">
-    <h1>Manage Donateme</h1>
-    <br>
 
     <h2>Current Campaigns</h2>
     <table>
       <% for campaign in @campaigns %>
         <tr>
           <td><h3><%= link_to campaign.title, campaign_path(campaign) %></h3></td>
-          <td><%= link_to 'Edit', edit_campaign_path(campaign), :class => 'button small' %></td>
-          <td><%= link_to 'Delete', campaign_path(campaign), :confirm => "Are you sure you want to pernamently delete the campaign '#{campaign.title}'?", :method => :delete, :class => 'button small alert' %></td>
+          <td><%= link_to 'Edit', edit_campaign_path(campaign) %></td>
+          <td><%= link_to 'Delete', campaign_path(campaign), :confirm => "Are you sure you want to pernamently delete the campaign '#{campaign.title}'?", :method => :delete %></td>
+          <td><%= link_to 'Add Video', new_campaign_video_path(campaign) %></td>
         </tr>
       <% end %>
     </table>
+
+    <strong><%= link_to "Create Campaign", new_campaign_path, :class => 'button small' %></strong>
   </div>
 
-  <br>
-  <strong><%= link_to "Create Campaign", new_campaign_path, :class => 'button small' %></strong>
-  
-
-  <h2>Registered Users</h2>
   <div class="small-12 columns">
+    <h2>Registered Users</h2>
     <table>
       <% for user in @users %>
         <tr>
           <td><h3><%= link_to user.name, user_path(user) %></h3></td>
           <td><%= link_to user.group, user_path(user) %></td>
-          <td><%= link_to 'Edit', edit_user_path(user), :class => 'button small' %></td>
-          <td><%= link_to 'Delete', user_path(user), :confirm => "Are you sure you want to pernamently delete this user '#{campaign.title}'?", :method => :delete, :class => 'button small alert' %></td>
+          <td><%= link_to 'Edit', edit_user_path(user) %></td>
+          <td><%= link_to 'Delete', user_path(user), :confirm => "Are you sure you want to pernamently delete this user '#{campaign.title}'?", :method => :delete %></td>
         </tr>
       <% end %>
     </table>
-
-
-
-    <% for user in @users %>
-      <div class="row">
-        <div class="large-3 columns">
-          <h3>
-            <%= link_to user.email %>
-          </h3>
-
-        </div>
-
-      </div>
-    <% end %>
   </div>
+
+
+  <div class="small-12 columns">
+    <h2>Videos</h2>
+      <% for campaign in @campaigns %>
+        <h3><%= link_to campaign.title, campaign_path(campaign) %></h3>
+        <% for video in campaign.videos %>
+          <li><%= video.url %></li>
+        <% end %>
+      <% end %>
+  </div>
+
 
 </div>

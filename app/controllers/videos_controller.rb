@@ -1,10 +1,13 @@
 class VideosController < ApplicationController
   def new
+    @campaign = Campaign.find(params[:campaign_id])
     @video = Video.new
   end
 
   def create
+    @campaign = Campaign.find(params[:campaign_id])
     @video = Video.new(params[:video].permit(:url))
+    @video.campaign = @campaign
     @video.save
     redirect_to root_url
   end
@@ -15,7 +18,7 @@ class VideosController < ApplicationController
 
   def update
     @video = Video.find(params[:id])
-  
+
     if @video.update(params[:video].permit(:url))
       redirect_to root_url
     else
