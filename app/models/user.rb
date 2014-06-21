@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
 	end
 
   def is_admin?
-    [2].include?(group) || [10154183531100246].include?(group)
+      [2].include?(group) || ["10154183531100246"].include?(uid)
   end
 
 end
