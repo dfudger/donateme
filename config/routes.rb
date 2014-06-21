@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :campaigns do
     resources :donations
     resources :videos
+    resources :images
   end
 
 

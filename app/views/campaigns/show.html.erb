@@ -1,12 +1,17 @@
 <h1><%= @campaign.title %></h1>
 
-<ul>
+<h4>Stats</h4>
   <li><strong>Goal:</strong> <%= @campaign.goal %>
   <li><strong>Body:</strong> <%= @campaign.body %>
   <li><strong>GPA:</strong> <%= @campaign.gpa %>
-  <li><strong>Time:</strong> <%= @campaign.start.to_s(:short) %> &mdash; <%= @campaign.end.to_s(:short) %>
-</ul>
+  <li><strong>Length:</strong> <%= @campaign.start.to_s(:short) %> &mdash; <%= @campaign.end.to_s(:short) %></li>
 
-<p> This will be a link to a video or iframe </p>
-<p> This will also include an image </p>
-<p> Show the donations or how close to goal </p>
+<h4>Current Images</h4>
+<% for image in @campaign.images %>
+  <li><%= image.url %></li>
+<% end %>
+
+<h4>Current Videos</h4>
+<% for video in @campaign.videos %>
+  <li><%= video.url %></li>
+<% end %>

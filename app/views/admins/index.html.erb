@@ -30,15 +30,32 @@
     </table>
   </div>
 
+  <div class="small-12 columns">
+    <h2>Images</h2>
+    <table>
+        <% for campaign in @campaigns %>
+          <% for image in campaign.images %>
+            <tr>
+              <td><%= image.url %></td>
+              <td><%= campaign.title %></td>
+            </tr>
+          <% end %>
+        <% end %>
+    </table>
+  </div>
 
   <div class="small-12 columns">
     <h2>Videos</h2>
-      <% for campaign in @campaigns %>
-        <h3><%= link_to campaign.title, campaign_path(campaign) %></h3>
-        <% for video in campaign.videos %>
-          <li><%= video.url %></li>
-        <% end %>
-      <% end %>
+      <table>
+          <% for campaign in @campaigns %>
+            <% for video in campaign.videos %>
+              <tr>
+                <td><%= video.url %></td>
+                <td><%= campaign.title %></td>
+              </tr>
+            <% end %>
+          <% end %>
+      </table>
   </div>
 
 
