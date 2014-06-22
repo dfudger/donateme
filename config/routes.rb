@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     resources :videos
     resources :images
   end
+  resources :charges
 
 
   root 'welcome#index'
