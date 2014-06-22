@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'charges/new'
+
+  get 'charges/create'
+
   get 'images/new'
 
   get 'images/create'

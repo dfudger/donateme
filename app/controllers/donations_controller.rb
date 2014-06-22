@@ -1,11 +1,16 @@
 class DonationsController < ApplicationController
   def new
-  	@donation = Donation.new
+  	@campaign = Campaign.find(params[:campaign_id])
+    @donation = Donation.new
   end
 
   def create
-  	@donation = Donation.new(params[:donation].permit(:amount))
+  	@campaign = Campaign.find(params[:campaign_id])
+    @donation = Donation.new(params[:donation].permit(:amount))
+    @donation.campaign = @campaign
+    @donation.user = current_user
     @donation.save
+    flash[:notice] = "Donation successfully created"
     redirect_to root_url
   end
 end

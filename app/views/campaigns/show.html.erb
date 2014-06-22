@@ -15,3 +15,10 @@
 <% for video in @campaign.videos %>
   <li><%= video.url %></li>
 <% end %>
+<br>
+<%= link_to 'Give Donation', new_campaign_donation_path(@campaign), :class => 'button small'  %>
+
+<h4>Current Donations</h4>
+<% for donation in @campaign.donations %>
+  <li><%= donation.amount %> <%= donation.user.name %> </li>
+<% end %>

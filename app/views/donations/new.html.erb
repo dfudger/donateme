@@ -1,2 +1,19 @@
-<h1>Donations#new</h1>
-<p>Find me in app/views/donations/new.html.erb</p>
+<div class="layout-2cols">
+    <div class="content grid_8">
+        <div class="single-page">
+            <div class="wrapper-box box-post-comment">
+                <h2 class="common-title">New Donation</h2>
+                <div class="box-white">
+                    <%= form_for :donation, url: campaign_donations_path(@campaign) do |f| %>
+                        <%= render :partial => "form", :locals => {:f => f} %>
+                        <p class="rs ta-r clearfix">
+                            <span id="response"></span>
+                            <%= f.submit "Submit", :class => 'btn btn-white btn-submit-comment' %>
+                        </p>
+                    <% end %>
+                </div>
+            </div><!--end: .box-list-comment -->
+        </div>
+    </div><!--end: .content -->
+    <div class="clear"></div>
+</div>
