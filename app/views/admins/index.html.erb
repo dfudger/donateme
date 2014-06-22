@@ -24,7 +24,7 @@
           <td><h3><%= link_to user.name, user_path(user) %></h3></td>
           <td><%= link_to user.group, user_path(user) %></td>
           <td><%= link_to 'Edit', edit_user_path(user) %></td>
-          <td><%= link_to 'Delete', user_path(user), :confirm => "Are you sure you want to pernamently delete this user '#{campaign.title}'?", :method => :delete %></td>
+          <td><%= link_to 'Delete', user_path(user) %></td>
         </tr>
       <% end %>
     </table>
