@@ -7,7 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to("Admins", admins_path) if current_user.try(:is_admin?) %>
+<% if current_user.try(:is_admin?) %>
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to "Admin Console", admins_path  %></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><%= link_to "New Campaign", new_campaign_path %></li>
+        </ul>
+      </section>
+    </nav>
+<% end %>
 <div id="wrapper">
      <header id="header">
             <div class="wrap-top-menu">

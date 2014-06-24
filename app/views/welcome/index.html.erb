@@ -55,7 +55,7 @@
 			<div class="md-slide-item slide-2" data-timeout="9000">
 				<div class="md-mainimg"><%= image_tag "ex/th-slide2.jpg" %></div>
 				<div class="md-objects">
-					<div class="md-object slide-with-background" data-x="20" data-y="58" data-width="500" data-height="170" data-padding-top="30" data-padding-bottom="30" data-padding-left="35" data-padding-right="35" data-start="300" data-stop="3600" data-easein="random" data-easeout="keep">
+					<div class="md-object slide-with-background" data-x="20" data-y="58" data-width="500" data-height="190" data-padding-top="30" data-padding-bottom="30" data-padding-left="35" data-padding-right="35" data-start="300" data-stop="3600" data-easein="random" data-easeout="keep">
 						<h2 class="rs slide-title">Gift Of Education</h2>
 						<p class="rs slide-description2">DonateMe me gives you the power to help students from your hometown or going to your alma mater, by donating money towards their college tuition.
 
@@ -149,60 +149,61 @@
                     </nav><!--end: .lst-category -->
                 <!-- </div> -->
             <!--</div>end: .left-lst-category  -->
-            <div  class="grid_13 marked-category" >
-                <div class="wrap-title clearfix" >
-                    <h2 class="title-mark rs">Staff Pick <span class="fc-orange">:</span></h2>
-                    <!-- <a href="category.php" class="count-project be-fc-orange">See all <span class="fw-b">24</span> Comics projects</a> -->
-                </div>
-                <div class="box-marked-project project-short">
-                    <div class="top-project-info">
-                        <div class="content-info-short clearfix" >
-                            <a href="campaign_path(@featured)" class="thumb-img">
-                                <img src="@featured.images.first.url" border="0" alt="@featured.images.first.alt" >
-                            </a>
-                            <div class="wrap-short-detail">
-                                <h3 class="rs acticle-title"><a class="be-fc-orange" href="project.php">@featured.user.full_name</a></h3>
-                                <p class="rs tiny-desc">is accepted to <a href="profile.php" class="fw-b fc-gray be-fc-orange">@featured.college</a><span class="fw-b fc-gray"></span></p>
-                                <p class="rs title-description"><?php echo "$essay"; ?></p>
+
+            <% if @featured %>
+                <div  class="grid_13 marked-category" >
+                    <div class="wrap-title clearfix" >
+                        <h2 class="title-mark rs">Staff Pick <span class="fc-orange">:</span></h2>
+                        <!-- <a href="category.php" class="count-project be-fc-orange">See all <span class="fw-b">24</span> Comics projects</a> -->
+                    </div>
+                    <div class="box-marked-project project-short">
+                        <div class="top-project-info">
+                            <div class="content-info-short clearfix" >
+                                <a href="campaign_path(@featured)" class="thumb-img">
+                                    <img src="@featured.images.first.url" border="0" alt="@featured.images.first.alt" >
+                                </a>
+                                <div class="wrap-short-detail">
+                                    <h3 class="rs acticle-title"><a class="be-fc-orange" href="project.php"><%= @featured.user.name %></a></h3>
+                                    <p class="rs tiny-desc">is accepted to <a href="profile.php" class="fw-b fc-gray be-fc-orange">@featured.college</a><span class="fw-b fc-gray"></span></p>
+                                    <p class="rs title-description"><%= @featured.body %></p>
+                                </div>
+                                <p class="rs clearfix comment-view">
+                                    <!-- <a href="project-1.php" class="fc-gray be-fc-orange">75 comments</a> -->
+                                    <span class="sep"></span>
+                                    <!-- <a href="#" class="fc-gray be-fc-orange">378 views</a> -->
+                                </p>
                             </div>
-                            <p class="rs clearfix comment-view">
-                                <!-- <a href="project-1.php" class="fc-gray be-fc-orange">75 comments</a> -->
-                                <span class="sep"></span>
-                                <!-- <a href="#" class="fc-gray be-fc-orange">378 views</a> -->
-                            </p>
+                        </div>
+
+                        <!--end: .top-project-info -->
+                        <div class="bottom-project-info clearfix" style="max-height:100px;">
+                            <div class="project-progress sys_circle_progress" data-percent="76">
+                                <div class="sys_holder_sector"></div>
+                            </div>
+                            <div class="group-fee clearfix">
+                                <div class="fee-item">
+                                    <p class="rs lbl">Backers</p>
+                                    <span class="val">270</span>
+                                </div>
+                                <div class="sep"></div>
+                                <div class="fee-item">
+                                    <p class="rs lbl">Pledged</p>
+                                    <span class="val">$38,000</span>
+                                </div>
+                                <div class="sep"></div>
+                                <div class="fee-item">
+                                    <p class="rs lbl">Days Left</p>
+                                    <span class="val">25</span>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
                         </div>
                     </div>
-
-
-
-                    <!--end: .top-project-info -->
-                    <div class="bottom-project-info clearfix" style="max-height:100px;">
-                        <div class="project-progress sys_circle_progress" data-percent="76">
-                            <div class="sys_holder_sector"></div>
-                        </div>
-                        <div class="group-fee clearfix">
-                            <div class="fee-item">
-                                <p class="rs lbl">Backers</p>
-                                <span class="val">270</span>
-                            </div>
-                            <div class="sep"></div>
-                            <div class="fee-item">
-                                <p class="rs lbl">Pledged</p>
-                                <span class="val">$38,000</span>
-                            </div>
-                            <div class="sep"></div>
-                            <div class="fee-item">
-                                <p class="rs lbl">Days Left</p>
-                                <span class="val">25</span>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </div><!--end: .marked-category -->
-            <div class="clear"></div>
-        </div>
-    </div><!--end: .home-feature-category -->
+                </div><!--end: .marked-category -->
+                <div class="clear"></div>
+            </div>
+        </div><!--end: .home-feature-category -->
+    <% end %>
 
 
 
@@ -244,8 +245,8 @@
         <div class="project-short sml-thumb">
             <div class="top-project-info" style=" max-height: 325; min-height: 325; height:325px;">
                 <div class="content-info-short clearfix">
-                    <a href="<%= campaign_path(campaign) %>" class="thumb-img thumb-avatar">'; ?>
-                        <img src="campaign.images.first.url" style='width:100%;' border="0" alt="$TITLE" >
+                    <a href="<%= campaign_path(campaign) %>" class="thumb-img thumb-avatar">
+                        <img src="campaign.images.first.url" style='width: 100%;' border="0" alt="campaign.images.first.alt" >
                     </a>
                     <div class="wrap-short-detail">
                         <h3 class="rs acticle-title"><a class="be-fc-orange" href="project.php"><%= campaign.title %></a></h3>
