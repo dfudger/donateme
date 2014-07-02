@@ -10,6 +10,10 @@
     <%= f.text_field :goal %>
   </div>
 
+  <%= collection_select(:campaign, :school_id, School.all, :id, :name) %>
+
+  <%= collection_select(:campaign, :user_id, User.all, :id, :name) %>
+
   <div class="small-12 large-4 columns">
     <%= f.label :body %>
     <%= f.text_field :body %>

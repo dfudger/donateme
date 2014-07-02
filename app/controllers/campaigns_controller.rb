@@ -4,7 +4,7 @@ class CampaignsController < ApplicationController
   end
 
   def create
-    @campaign = Campaign.new(params[:campaign].permit(:goal, :start, :end, :gpa, :title, :body))
+    @campaign = Campaign.new(params[:campaign].permit(:goal, :start, :end, :gpa, :title, :body, :school_id))
     @campaign.user = current_user
     @campaign.save
     redirect_to root_url
@@ -13,7 +13,7 @@ class CampaignsController < ApplicationController
   def update
     @campaign = Campaign.find(params[:id])
 
-    if @campaign.update(params[:campaign].permit(:goal, :start, :end, :gpa, :title, :body))
+    if @campaign.update(params[:campaign].permit(:goal, :start, :end, :gpa, :title, :body, :school_id))
     @campaign.save
       redirect_to root_url
     else
