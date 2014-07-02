@@ -37,6 +37,7 @@ Rails.application.routes.draw do
 
   #/campaigns/1/videos/
   resources :admins
+  resources :schools
   resources :users
   resources :campaigns do
     resources :donations

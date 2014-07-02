@@ -4,6 +4,7 @@ class AdminsController < ApplicationController
   def index
     @campaigns = Campaign.all
     @users = User.all
+    @schools = School.all
   end
 
 end

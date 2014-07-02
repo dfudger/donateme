@@ -59,5 +59,19 @@
       </table>
   </div>
 
+  <h2>Current Schools</h2>
+  <table>
+    <% for school in @schools %>
+      <tr>
+        <td><%= school.name %></td>
+        <td><%= link_to 'Edit', edit_school_path(school) %></td>
+        <td><%= link_to 'Delete', school_path(school), :confirm => "Are you sure you want to pernamently delete the campaign '#{campaign.title}'?", :method => :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <strong><%= link_to "Add School", new_school_path, :class => 'button small' %></strong>
+</div>
+
 
 </div>

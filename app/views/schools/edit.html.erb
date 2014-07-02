@@ -1,2 +1,13 @@
-<h1>Schools#edit</h1>
-<p>Find me in app/views/schools/edit.html.erb</p>
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Edit User</h1>
+    <%= form_for :school, url: school_path(@school), method: :patch do |f| %>
+
+      <%= render :partial => "form", :locals => {:f => f} %>
+
+      <div>
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>
