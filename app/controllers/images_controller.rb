@@ -30,6 +30,6 @@ class ImagesController < ApplicationController
     @image = Image.find(params[:id])
     @image.destroy
 
-    redirect_to root_url
+    redirect_to admins_path
   end
 end

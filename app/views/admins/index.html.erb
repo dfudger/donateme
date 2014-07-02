@@ -39,6 +39,8 @@
             <tr>
               <td><%= image.url %></td>
               <td><%= campaign.title %></td>
+              <td><%= link_to 'Edit', edit_campaign_image_path(campaign, image) %></td>
+              <td><%= link_to 'Delete', campaign_image_path(campaign, image), :method => :delete %></td>
             </tr>
           <% end %>
         <% end %>
@@ -53,6 +55,8 @@
               <tr>
                 <td><%= video.url %></td>
                 <td><%= campaign.title %></td>
+                <td><%= link_to 'Edit', edit_campaign_video_path(campaign, video) %></td>
+                <td><%= link_to 'Delete', campaign_video_path(campaign, video), :method => :delete %></td>
               </tr>
             <% end %>
           <% end %>
