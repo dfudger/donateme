@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'schools/new'
+
+  get 'schools/create'
+
+  get 'schools/update'
+
+  get 'schools/edit'
+
+  get 'schools/destroy'
+
+  get 'schools/index'
+
+  get 'schools/show'
+
   get 'charges/new'
 
   get 'charges/create'
