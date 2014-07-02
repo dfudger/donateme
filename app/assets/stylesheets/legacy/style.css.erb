@@ -832,7 +832,7 @@ a.fc-gray-dark,.fc-gray-dark{color: #999}
 
 /* 6.	Icon
 --------------------------------------------------------------------------------*/
-.icon{background: transparent url("/assets/icon.png") no-repeat;border: none;display: inline-block;*display: inline;*zoom: 1;}
+.icon{background: transparent url("<%= asset_path('icon.png') %>") no-repeat;border: none;display: inline-block;*display: inline;*zoom: 1;}
     .iMagnifier        {width:16px;height:16px;background-position: 0 0}
     .iCalendar         {width:16px;height:16px;background-position: -16px 0}
     .iClock            {width:16px;height:16px;background-position: -32px 0}
@@ -1074,7 +1074,7 @@ a.fc-gray-dark,.fc-gray-dark{color: #999}
 .project-short .project-progress{
     margin: 10px 30px;
     /*background: url("/assets/progress.png") no-repeat center center;*/
-    background: url("/assets//bg-s-out.png") no-repeat center center;
+    background: url("<%= asset_path('bg-s-out.png') %>") no-repeat center center;
     float: left;
     width: 78px;
     height: 78px;
@@ -1092,7 +1092,7 @@ a.fc-gray-dark,.fc-gray-dark{color: #999}
     position: absolute;
     top: 9px;
     left: 8px;
-    background: url("/assets/bg-s-in.png") no-repeat;
+    background: url("<%= asset_path('bg-s-in.png') %>") no-repeat;
     width: 62px;
     height: 62px;
     line-height: 62px;
@@ -1526,7 +1526,7 @@ a.fc-gray-dark,.fc-gray-dark{color: #999}
 	color: #fff
 }
 .slide-with-background {
-	background:url('/assets/slide-item-bg.png') repeat 0 0;
+	background:url("<%= asset_path('slide-item-bg.png') %>") repeat 0 0;
 }
 #home-slider .md-bullet{
     cursor: pointer;
