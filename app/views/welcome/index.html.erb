@@ -45,12 +45,12 @@
                 <div class="box-marked-project project-short">
                     <div class="top-project-info">
                         <div class="content-info-short clearfix" >
-                            <a href="campaign_path(@featured)" class="thumb-img">
-                                <img src="@featured.images.first.url" border="0" alt="@featured.images.first.alt" >
+                            <a href="<%= campaign_path(@featured) %>" class="thumb-img">
+                                <img src="<%= @featured.images.first.url %>" border="0" alt="@featured.images.first.alt" >
                             </a>
                             <div class="wrap-short-detail">
-                                <h3 class="rs acticle-title"><a class="be-fc-orange" href="project.php"><%= @featured.user.name %></a></h3>
-                                <p class="rs tiny-desc">is accepted to <a href="profile.php" class="fw-b fc-gray be-fc-orange">@featured.college</a><span class="fw-b fc-gray"></span></p>
+                                <h3 class="rs acticle-title"><a class="be-fc-orange" href="<%= campaign_path(@featured) %>"><%= @featured.user.name %></a></h3>
+                                <p class="rs tiny-desc">is accepted to <a href="<%= campaign_path(@featured) %>" class="fw-b fc-gray be-fc-orange">@featured.college</a><span class="fw-b fc-gray"></span></p>
                                 <p class="rs title-description"><%= @featured.body %></p>
                             </div>
                             <p class="rs clearfix comment-view">
@@ -112,10 +112,10 @@
                     <div class="top-project-info" style=" max-height: 325; min-height: 325; height:325px;">
                         <div class="content-info-short clearfix">
                             <a href="<%= campaign_path(campaign) %>" class="thumb-img thumb-avatar">
-                                <img src="campaign.images.first.url" style='width: 100%;' border="0" alt="campaign.images.first.alt" >
+                                <img src="<%= campaign.images.first.url %>" style='width: 100%;' border="0" alt="campaign.images.first.alt" >
                             </a>
                             <div class="wrap-short-detail">
-                                <h3 class="rs acticle-title"><a class="be-fc-orange" href="project.php"><%= campaign.title %></a></h3>
+                                <h3 class="rs acticle-title"><a class="be-fc-orange" href="<%= campaign_path(@featured) %>"><%= campaign.title %></a></h3>
                                 <p class="rs title-description"><%= campaign.body %></p>
                                 <p class="rs project-location">
                                     <i class="icon iLocation"></i>
@@ -129,7 +129,7 @@
                             <%= percentage_collected = 50 %>
                             <!-- #campaign.goal -->
                             <div class="bg-progress">
-                                <span  style="width:<?php echo $percentage_collected; ?>%"></span>
+                                <span style="width:<%= percentage_collected %>%"></span>
                             </div>
                         </div>
                         <div class="group-fee clearfix">
