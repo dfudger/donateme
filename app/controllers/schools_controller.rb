@@ -1,13 +1,10 @@
 class SchoolsController < ApplicationController
   def new
-    @campaign = Campaign.find(params[:campaign_id])
-    @school = school.new
+    @school = School.new
   end
 
   def create
-    @campaign = Campaign.find(params[:campaign_id])
     @school = school.new(params[:school].permit(:name))
-    @school.campaign = @campaign
     @school.save
     redirect_to root_url
   end
