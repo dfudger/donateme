@@ -46,7 +46,9 @@
                     <div class="top-project-info">
                         <div class="content-info-short clearfix" >
                             <a href="<%= campaign_path(@featured) %>" class="thumb-img">
-                                <img src="<%= @featured.images.first.url %>" border="0" alt="@featured.images.first.alt" >
+                                <% if @featured.images.size > 0 %>
+                                    <img src="<%= @featured.images.first.url %>" border="0" alt="<%= @featured.images.first.alt %>" >
+                                <% end %>
                             </a>
                             <div class="wrap-short-detail">
                                 <h3 class="rs acticle-title"><a class="be-fc-orange" href="<%= campaign_path(@featured) %>"><%= @featured.user.name %></a></h3>
@@ -112,7 +114,9 @@
                     <div class="top-project-info" style=" max-height: 325; min-height: 325; height:325px;">
                         <div class="content-info-short clearfix">
                             <a href="<%= campaign_path(campaign) %>" class="thumb-img thumb-avatar">
-                                <img src="<%= campaign.images.first.url %>" style='width: 100%;' border="0" alt="campaign.images.first.alt" >
+                                <% if campaign.images.size > 0 %>
+                                    <img src="<%= campaign.images.first.url %>" style='width: 100%;' border="0" alt="<%= campaign.images.first.alt %>" >
+                                <% end %>
                             </a>
                             <div class="wrap-short-detail">
                                 <h3 class="rs acticle-title"><a class="be-fc-orange" href="<%= campaign_path(@featured) %>"><%= campaign.title %></a></h3>
