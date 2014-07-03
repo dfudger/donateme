@@ -28,7 +28,7 @@
 					<h2 class="rs slide-title">Gift Of Education</h2>
 					<p class="rs slide-description2">DonateMe me gives you the power to help students from your hometown or going to your alma mater, by donating money towards their college tuition.
 
-                    </p>
+          </p>
 				</div>
 			</div>
 		</div>
@@ -52,7 +52,7 @@
                             </a>
                             <div class="wrap-short-detail">
                                 <h3 class="rs acticle-title"><a class="be-fc-orange" href="<%= campaign_path(@featured) %>"><%= @featured.user.name %></a></h3>
-                                <p class="rs tiny-desc">is accepted to <a href="<%= campaign_path(@featured) %>" class="fw-b fc-gray be-fc-orange">@featured.college</a><span class="fw-b fc-gray"></span></p>
+                                <p class="rs tiny-desc">is accepted to <a href="<%= campaign_path(@featured) %>" class="fw-b fc-gray be-fc-orange"><%= @featured.school.name %></a><span class="fw-b fc-gray"></span></p>
                                 <p class="rs title-description"><%= @featured.body %></p>
                             </div>
                             <p class="rs clearfix comment-view">
@@ -62,23 +62,23 @@
                     </div>
 
                     <div class="bottom-project-info clearfix" style="max-height:100px;">
-                        <div class="project-progress sys_circle_progress" data-percent="76">
+                        <div class="project-progress sys_circle_progress" data-percent="<%= @featured.progress %>">
                             <div class="sys_holder_sector"></div>
                         </div>
                         <div class="group-fee clearfix">
                             <div class="fee-item">
                                 <p class="rs lbl">Backers</p>
-                                <span class="val">270</span>
+                                <span class="val"><%= @featured.backers %></span>
                             </div>
                             <div class="sep"></div>
                             <div class="fee-item">
                                 <p class="rs lbl">Pledged</p>
-                                <span class="val">$38,000</span>
+                                <span class="val">$<%= @featured.pledged %></span>
                             </div>
                             <div class="sep"></div>
                             <div class="fee-item">
                                 <p class="rs lbl">Days Left</p>
-                                <span class="val">25</span>
+                                <span class="val"><%= @featured.left %></span>
                             </div>
                         </div>
                         <div class="clear"></div>
@@ -130,27 +130,26 @@
                     </div>
                     <div class="bottom-project-info clearfix">
                         <div class="line-progress">
-                            <%= percentage_collected = 50 %>
                             <!-- #campaign.goal -->
                             <div class="bg-progress">
-                                <span style="width:<%= percentage_collected %>%"></span>
+                                <span style="width:<%= campaign.progress %>%"></span>
                             </div>
                         </div>
                         <div class="group-fee clearfix">
                             <div class="fee-item">
                                 <p class="rs lbl">Funded</p>
-                                <span class="val"><%= percentage_collected %>%</span>
+                                <span class="val"><%= campaign.progress %>%</span>
                             </div>
                             <div class="sep"></div>
                             <div class="fee-item">
                                 <p class="rs lbl">Pledged</p>
 
-                                <span class="val">$<%= 50 %></span>
+                                <span class="val">$<%= campaign.pledged %></span>
                             </div>
                             <div class="sep"></div>
                             <div class="fee-item">
                                 <p class="rs lbl">Days Left</p>
-                                <span class="val">25</span>
+                                <span class="val"><%= campaign.left %></span>
                             </div>
                         </div>
                     </div>

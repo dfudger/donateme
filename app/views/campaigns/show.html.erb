@@ -1,9 +1,9 @@
     <div class="layout-2cols">
         <div class="content grid_8" style= "padding-top: 5%">
             <div class="project-detail">
-                <h1 class="rs project-title" ><strong><%= @campaign.title %></strong></h1>
+                <h1 class="rs project-title" ><strong><%= @campaign.user.name %></strong></h1>
                 <!--<p class="rs post-by">by <a href="#">Jonh Doe</a></p> -->
-                <h3 class= "reduce_space" style= "padding-top: 0;"><p class="rs post-by" style= "padding: 0;"><strong>@campaign.college.name</strong></p></h3>
+                <h3 class= "reduce_space" style= "padding-top: 0;"><p class="rs post-by" style= "padding: 0;"><strong><%= @campaign.school.name %></strong></p></h3>
                 <h3 class= "reduce_space" style= "padding-top: 0px;"><p class="rs post-by" style= "padding: 0px;"><strong>GPA: <%= @campaign.gpa %></strong></p></h3>
                 <p class="rs post-by"></p>
                 <div class="project-short big-thumb">
@@ -12,33 +12,35 @@
                             <div class="thumb-img">
                                 <div class="rslides_container">
                                   <ul class="rslides" id="slider1">
-                                    <li><iframe width="552" height="411" src="//www.youtube.com/embed/<?php echo $video_link1; ?>"
+                                    <li><iframe width="552" height="411" src="<%= @campaign.videos.first.embed %>"
                                         frameborder="0" allowfullscreen></iframe></li>
-                                    <li><img src="<?php echo $image_link1;?>" alt=""></li>
-                                    <li><img src="<?php echo $image_link1;?>" alt=""></li>
+
+                                    <% @campaign.images.each do |image| %>
+                                      <li><img src="<%= image.url %>" alt=""></li>
+                                    <% end %>
                                   </ul>
                                 </div>
                             </div>
                         </div>
                     </div><!--end: .top-project-info -->
                     <div class="bottom-project-info clearfix">
-                        <div class="project-progress sys_circle_progress" data-percent="87">
+                        <div class="project-progress sys_circle_progress" data-percent="<%= @campaign.progress %>">
                             <div class="sys_holder_sector"></div>
                         </div>
                         <div class="group-fee clearfix">
                             <div class="fee-item">
                                 <p class="rs lbl">Backers</p>
-                                <span class="val">270</span>
+                                <span class="val"><%= @campaign.backers %></span>
                             </div>
                             <div class="sep"></div>
                             <div class="fee-item">
                                 <p class="rs lbl">Pledged</p>
-                                <span class="val">$38,000</span>
+                                <span class="val">$<%= @campaign.pledged %></span>
                             </div>
                             <div class="sep"></div>
                             <div class="fee-item">
                                 <p class="rs lbl">Days Left</p>
-                                <span class="val">25</span>
+                                <span class="val"><%= @campaign.left %></span>
                             </div>
                         </div>
                         <div class="clear"></div>
@@ -56,8 +58,8 @@
                             <h3 class="rs alternate-tab accordion-label">About</h3>
                             <div class="tab-pane active accordion-content">
                                 <div class="editor-content">
-                                    <h3 class="rs title-inside">@campaign.user.name</h3>
-                                    <p class="rs post-by">by <a href="#" class="fw-b fc-gray be-fc-orange">campaign.user.name</a> in <span class="fw-b fc-gray">New York, NY</span></p>
+                                    <h3 class="rs title-inside"><%= @campaign.user.name %></h3>
+                                    <p class="rs post-by">by <a href="#" class="fw-b fc-gray be-fc-orange"><%= @campaign.user.name %></a> in <span class="fw-b fc-gray">New York, NY</span></p>
                                     <p><%= @campaign.body %></p>
                                     <p>
                                        <!-- <img class="img-desc" src="images/ex/th-552x411-2.jpg" alt="$DESCRIPTION"/>
@@ -92,10 +94,7 @@
                                 <div class="tab-pane-inside">
                                     <div class="list-last-post">
                                         <div class="media other-post-item">
-                                          <!--   <a href="#" class="thumb-left">
-                                                <img src="images/ex/th-90x90-1.jpg" alt="$TITLE">
-                                            </a>
-                                           -->  <div class="media-body">
+                                           <div class="media-body">
                                                 <h4 class="rs title-other-post">
                                                     <a href="#" class="be-fc-orange fw-b">John Doe</a>
                                                 </h4>
@@ -161,9 +160,6 @@
                                 <div class="tab-pane-inside">
                                     <div class="project-author pb20">
                                         <div class="media">
-                                            <!-- <a href="#" class="thumb-left">
-                                                <img src="images/ex/th-90x90-1.jpg" alt="$USER_NAME"/>
-                                            </a> -->
                                             <div class="media-body">
                                                 <h4 class="rs pb10"><a href="#" class="be-fc-orange fw-b">John Doe</a></h4>
                                                 <p class="rs">Chicago, IL</p>
@@ -428,22 +424,3 @@
         </div><!--end: .sidebar -->
         <div class="clear"></div>
     </div>
-
-
-<li><strong>Goal:</strong> <%= @campaign.goal %>
-
-<h4>Current Images</h4>
-<% for image in @campaign.images %>
-  <li><%= image.url %></li>
-<% end %>
-
-<h4>Current Videos</h4>
-<% for video in @campaign.videos %>
-  <li><%= video.url %></li>
-<% end %>
-<br>
-
-<h4>Current Donations</h4>
-<% for donation in @campaign.donations %>
-  <li><%= donation.amount %> <%= donation.user.name %> </li>
-<% end %>
