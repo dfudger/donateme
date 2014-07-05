@@ -9,7 +9,7 @@ class VideosController < ApplicationController
     @video = Video.new(params[:video].permit(:url))
     @video.campaign = @campaign
     @video.save
-    redirect_to root_url
+    redirect_to admins_path
   end
 
   def edit
@@ -22,7 +22,7 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
 
     if @video.update(params[:video].permit(:url))
-      redirect_to root_url
+      redirect_to admins_path
     else
       render 'edit'
     end
@@ -32,6 +32,6 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
     @video.destroy
 
-    redirect_to root_url
+    redirect_to admins_path
   end
 end

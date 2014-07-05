@@ -6,7 +6,7 @@ class SchoolsController < ApplicationController
   def create
     @school = School.new(params[:school].permit(:name))
     @school.save
-    redirect_to root_url
+    redirect_to admins_path
   end
 
   def edit
@@ -17,7 +17,7 @@ class SchoolsController < ApplicationController
     @school = School.find(params[:id])
 
     if @school.update(params[:school].permit(:name))
-      redirect_to root_url
+      redirect_to admins_path
     else
       render 'edit'
     end
@@ -27,6 +27,6 @@ class SchoolsController < ApplicationController
     @school = School.find(params[:id])
     @school.destroy
 
-    redirect_to root_url
+    redirect_to admins_path
   end
 end

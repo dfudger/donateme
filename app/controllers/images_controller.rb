@@ -9,7 +9,7 @@ class ImagesController < ApplicationController
     @image = Image.new(params[:image].permit(:url))
     @image.campaign = @campaign
     @image.save
-    redirect_to root_url
+    redirect_to admins_path
   end
 
   def edit
@@ -22,7 +22,7 @@ class ImagesController < ApplicationController
     @image = Image.find(params[:id])
 
     if @image.update(params[:image].permit(:url))
-      redirect_to root_url
+      redirect_to admins_path
     else
       render 'edit'
     end

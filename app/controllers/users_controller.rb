@@ -6,15 +6,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user].permit(:group, :name, :city, :school))
     @user.save
-    redirect_to root_url
-  end  
+    redirect_to admins_path
+  end
 
   def update
     @user = User.find(params[:id])
 
     if @user.update(params[:user].permit(:group, :name, :city, :school))
     @user.save
-      redirect_to root_url
+      redirect_to admins_path
     else
       render 'edit'
     end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
 
-    redirect_to root_url
+    redirect_to admins_path
   end
 
   def index

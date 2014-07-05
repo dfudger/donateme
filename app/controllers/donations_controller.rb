@@ -11,6 +11,6 @@ class DonationsController < ApplicationController
     @donation.user = current_user
     @donation.save
     flash[:notice] = "Donation successfully created"
-    redirect_to root_url
+    redirect_to admins_path
   end
 end

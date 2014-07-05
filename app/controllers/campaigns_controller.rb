@@ -8,7 +8,7 @@ class CampaignsController < ApplicationController
     @campaign.user = current_user
     @campaign.title = current_user.name
     @campaign.save
-    redirect_to root_url
+    redirect_to admins_path
   end
 
   def update
@@ -16,7 +16,7 @@ class CampaignsController < ApplicationController
 
     if @campaign.update(params[:campaign].permit(:goal, :start, :end, :gpa, :body, :school_id))
     @campaign.save
-      redirect_to root_url
+      redirect_to admins_path
     else
       render 'edit'
     end
@@ -30,7 +30,7 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.find(params[:id])
     @campaign.destroy
 
-    redirect_to root_url
+    redirect_to admins_path
   end
 
   def index
