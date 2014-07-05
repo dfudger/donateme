@@ -19,6 +19,7 @@
       <section class="top-bar-section">
         <ul class="left">
           <li><%= link_to "New Campaign", new_campaign_path %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
         </ul>
       </section>
     </nav>
