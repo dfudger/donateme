@@ -13,10 +13,12 @@ class VideosController < ApplicationController
   end
 
   def edit
+    @campaign = Campaign.find(params[:campaign_id])
     @video = Video.find(params[:id])
   end
 
   def update
+    @campaign = Campaign.find(params[:campaign_id])
     @video = Video.find(params[:id])
 
     if @video.update(params[:video].permit(:url))

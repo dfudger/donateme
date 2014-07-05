@@ -1,2 +1,13 @@
-<h1>Images#edit</h1>
-<p>Find me in app/views/images/edit.html.erb</p>
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Edit Image</h1>
+    <%= form_for :image, url: campaign_images_path(@campaign), method: :patch do |f| %>
+
+      <%= render :partial => "form", :locals => {:f => f} %>
+
+      <div>
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -13,10 +13,12 @@ class ImagesController < ApplicationController
   end
 
   def edit
+    @campaign = Campaign.find(params[:campaign_id])
     @image = Image.find(params[:id])
   end
 
   def update
+    @campaign = Campaign.find(params[:campaign_id])
     @image = Image.find(params[:id])
 
     if @image.update(params[:image].permit(:url))
