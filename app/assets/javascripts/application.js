@@ -14,13 +14,21 @@
 //= require jquery_ujs
 //= require turbolinks
 //
-//= require legacy/raphael-min.js
-//= require legacy/md_slider.min.js
+//= require legacy/html5.js
+//= require legacy/jquery-1.9.1.min.js
 //= require legacy/jquery-migrate-1.2.1.min.js
+//= require legacy/jquery.form.js
 //= require legacy/jquery.sidr.min.js
+//= require legacy/jquery.tinycarousel.min.js
 //= require legacy/jquery.touchwipe.min.js
 //= require legacy/jquery.tweet.min.js
+//= require legacy/jquery.validate.min.js
+//= require legacy/md_slider.js
+//= require legacy/md_slider.min.js
 //= require legacy/pie.js
+//= require legacy/raphael-min.js
+//= require legacy/responsiveslides.min.js
 //= require legacy/script.js
+//= require legacy/selectnav.min.js
 //
 // require_tree .

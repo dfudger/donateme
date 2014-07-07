@@ -1,5 +1,5 @@
     <div class="layout-2cols">
-        <div class="content grid_8" style= "padding-top: 5%">
+        <div class="content grid_8">
             <div class="project-detail">
                 <h1 class="rs project-title" ><strong><%= @campaign.user.name %></strong></h1>
                 <!--<p class="rs post-by">by <a href="#">Jonh Doe</a></p> -->
@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="project-btn-action">
 
-                                    <a class="btn big btn-red" href="mailto:info@donateme.org">Ask a question</a>
+                                    <a class="btn big btn-red" href="mailto:info@donateme.org">Questions? Contact DonateMe</a>
                                     <!-- <a class="btn big btn-black" href="#">Report this project</a> -->
                                 </div>
                             </div><!--end: .tab-pane(About) -->
@@ -330,7 +330,7 @@
                                 <!-- <p class="rs fw-b pb20">Ocupated (2 of 10)</p> -->
                                 <!--<p class="rs"><span class="fw-b">Estimated delivery:</span> Aug 2013</p>
                                 <p class="rs fw-thin fc-gray pb20">Ships within the US only</p> -->
-                                <p class="rs ta-c"><a class="btn big btn-red" href="pledge.php">Pledge</a></p>
+                                <p class="rs ta-c"><%= link_to "Pledge $50", new_campaign_donation_path(@campaign, :amount => 50), :class => 'btn big btn-red' %></p>
                             </div>
                         </div>
                     </li><!--end: pledge-item -->
@@ -347,7 +347,7 @@
                                 <!-- <p class="rs fw-b pb20">Ocupated (2 of 10)</p> -->
                                 <!--<p class="rs"><span class="fw-b">Estimated delivery:</span> Aug 2013</p>
                                 <p class="rs fw-thin fc-gray pb20">Ships within the US only</p> -->
-                                <p class="rs ta-c"><a class="btn big btn-red" href="pledge.php">Pledge</a></p>
+                                <p class="rs ta-c"><%= link_to "Pledge $100", new_campaign_donation_path(@campaign, :amount => 100), :class => 'btn big btn-red' %></p>
                             </div>
                         </div>
                     </li><!--end: pledge-item -->
@@ -364,7 +364,7 @@
                                 <!-- <p class="rs fw-b pb20">Ocupated (2 of 10)</p> -->
                               <!--    <p class="rs"><span class="fw-b">Estimated delivery:</span> Aug 2013</p>
                                 <p class="rs fw-thin fc-gray pb20">Ships within the US only</p>  -->
-                                <p class="rs ta-c"><a class="btn big btn-red" href="pledge.php">Pledge</a></p>
+                                <p class="rs ta-c"><%= link_to "Pledge $500", new_campaign_donation_path(@campaign, :amount => 500), :class => 'btn big btn-red' %></p>
                             </div>
                         </div>
                     </li><!--end: pledge-item -->
@@ -415,7 +415,7 @@
                                 <p class="rs fw-b pb20">Ocupated (2 of 10)</p>
                                 <!--<p class="rs"><span class="fw-b">Estimated delivery:</span> Aug 2013</p>
                                 <p class="rs fw-thin fc-gray pb20">Ships within the US only</p> -->
-                                <p class="rs ta-c"><a class="btn big btn-red" href="#">Pledge</a></p>
+                                <p class="rs ta-c"><%= link_to "Pledge $1,000", new_campaign_donation_path(@campaign, :amount => 1000), :class => 'btn big btn-red' %></p>
                             </div>
                         </div>
                     </li><!--end: pledge-item -->

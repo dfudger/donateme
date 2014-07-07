@@ -5,12 +5,12 @@
 # Websites:  http://www.megadrupal.com -  Email: info@megadrupal.com
 --------------------------------------------------------------------------*/
 
-$(function(){
+$(document).ready(function() {
     var sys_show_popup_login = $(".sys_show_popup_login"),
         sys_popup_common = $("#sys_popup_common");
-		
+
 	/* Homepage Slider
-	---------------------------------------------------------- */	
+	---------------------------------------------------------- */
 	if ($("#md-slider-1").length) {
 		$("#md-slider-1").mdSlider({
 			fullwidth: true,
@@ -29,7 +29,7 @@ $(function(){
 			enableDrag: true
 		});
 	}
-	
+
 	/* get Twitter
 	---------------------------------------------------------- */
 
@@ -40,9 +40,9 @@ $(function(){
 			username: 'megadrupal',
 			template: '<p class="rs tweet-mind">{text}</p><p class="rs timestamp">{time}</p><i class="icon iTwitter"></i>',
 	});
-	
+
 	/* Project Slider
-	---------------------------------------------------------- */	
+	---------------------------------------------------------- */
     if ($("#slider1").length > 0) {
         $("#slider1").responsiveSlides({
             auto: false,
@@ -64,7 +64,7 @@ $(function(){
         $(this).parents(".tabbable").find(".tab-content .tab-pane").removeClass("active").eq(getIndex).addClass("active");
         return false;
     });
-	
+
 	/* Accordion
 	---------------------------------------------------------- */
     $(".accordion").on("click",".accordion-label",function(){
@@ -104,9 +104,9 @@ $(function(){
     sys_popup_common.on("click",".main-content",function(e){
         e.stopPropagation();
     });
-	
+
 	/* Loadmore button on Category
-	---------------------------------------------------------- */	
+	---------------------------------------------------------- */
     $('#showmoreproject').bind('click', function (e) {
         _self = $(this);
         _self.text('Loading...')
@@ -118,9 +118,9 @@ $(function(){
         });
         return false;
     });
-	
+
 	/* Loadmore button on blog
-	---------------------------------------------------------- */	
+	---------------------------------------------------------- */
     $('#showmorepost').bind('click', function (e) {
         _self = $(this);
         _self.text('Loading...')
@@ -132,9 +132,9 @@ $(function(){
         });
         return false;
     });
-	
+
 	/* Loadmore button on search results
-	---------------------------------------------------------- */	
+	---------------------------------------------------------- */
     $('#showmoreresults').bind('click', function (e) {
         _self = $(this);
         _self.text('Loading...')
@@ -146,13 +146,13 @@ $(function(){
         });
         return false;
     });
-	
+
 	/* Contact form: Ajax & Validate
-	---------------------------------------------------------- */	
+	---------------------------------------------------------- */
 	if(jQuery("#contact-form").length > 0){
         // Validate the contact form
         jQuery('#contact-form').validate({
-	
+
             // Add requirements to each of the fields
             rules: {
                 name: {
@@ -168,7 +168,7 @@ $(function(){
                     minlength: 10
                 }
             },
-		
+
             // Specify what error messages to display
             // when the user does something horrid
             messages: {
@@ -185,7 +185,7 @@ $(function(){
                     minlength: jQuery.format("At least {0} characters required.")
                 }
             },
-		
+
             // Use Ajax to send everything to processForm.php
             // submitHandler: function(form) {
             //     jQuery("#submit-contact").attr("value", "Sending...");
