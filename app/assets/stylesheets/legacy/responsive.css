@@ -458,7 +458,7 @@
     }
     #footer .term-privacy{
         position: static;
-        padding: 20px 0;
+        padding: 15px 0;
     }
     #footer .site-copyright{
         padding: 0;
@@ -477,4 +477,3 @@
 
 @media screen and (max-device-width:  320px), screen and (max-width:  320px) {
 }
-

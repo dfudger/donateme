@@ -3,8 +3,8 @@
             <div class="project-detail">
                 <h1 class="rs project-title" ><strong><%= @campaign.user.name %></strong></h1>
                 <!--<p class="rs post-by">by <a href="#">Jonh Doe</a></p> -->
-                <h3 class= "reduce_space" style= "padding-top: 0;"><p class="rs post-by" style= "padding: 0;"><strong><%= @campaign.school.name %></strong></p></h3>
-                <h3 class= "reduce_space" style= "padding-top: 0px;"><p class="rs post-by" style= "padding: 0px;"><strong>GPA: <%= @campaign.gpa %></strong></p></h3>
+                <h3 class= "reduce_space" style= "padding-top: 0;"><p class="rs post-by" style= "padding: 0;"><%= @campaign.school.name %></p></h3>
+                <h3 class= "reduce_space" style= "padding-top: 0px;"><p class="rs post-by" style= "padding: 0px;">GPA: <%= @campaign.gpa %></p></h3>
                 <p class="rs post-by"></p>
                 <div class="project-short big-thumb">
                     <div class="top-project-info">
@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="project-btn-action">
 
-                                    <a class="btn big btn-red" href="mailto:info@donateme.org">Questions? Contact DonateMe</a>
+                                    <!-- <a class="btn big btn-red" href="#">Questions? Contact DonateMe</a> -->
                                     <!-- <a class="btn big btn-black" href="#">Report this project</a> -->
                                 </div>
                             </div><!--end: .tab-pane(About) -->
