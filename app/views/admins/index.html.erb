@@ -5,9 +5,9 @@
     <table>
       <% for campaign in @campaigns %>
         <tr>
-          <td><h3><%= link_to campaign.title, campaign_path(campaign) %></h3></td>
+          <td><h3><%= link_to campaign.user.name, campaign_path(campaign) %></h3></td>
           <td><%= link_to 'Edit', edit_campaign_path(campaign) %></td>
-          <td><%= link_to 'Delete', campaign_path(campaign), :confirm => "Are you sure you want to pernamently delete the campaign '#{campaign.title}'?", :method => :delete %></td>
+          <td><%= link_to 'Delete', campaign_path(campaign), :confirm => "Are you sure you want to pernamently delete the campaign for '#{campaign.user.name}'?", :method => :delete %></td>
           <td><%= link_to 'Add Video', new_campaign_video_path(campaign) %></td>
           <td><%= link_to 'Add Image', new_campaign_image_path(campaign) %></td>
         </tr>

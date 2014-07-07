@@ -119,7 +119,7 @@
                                 <% end %>
                             </a>
                             <div class="wrap-short-detail">
-                                <h3 class="rs acticle-title"><a class="be-fc-orange" href="<%= campaign_path(@featured) %>"><%= campaign.title %></a></h3>
+                                <h3 class="rs acticle-title"><a class="be-fc-orange" href="<%= campaign_path(@featured) %>"><%= campaign.user.name %></a></h3>
                                 <p class="rs title-description"><%= campaign.body.truncate(100) %></p>
                                 <p class="rs project-location">
                                     <i class="icon iLocation"></i>
