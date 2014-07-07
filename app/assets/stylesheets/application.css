@@ -22,3 +22,39 @@
  * require_tree .
  *= require_self
  */
+
+ul.main-nav {
+    font-size: 13px;
+    list-style: none;
+}
+
+ul.main-nav li {
+    display: inline;
+    margin-top: 5px;
+}
+
+ul.main-nav li a,
+ul.main-nav li a:link,
+ul.main-nav li a:visited {
+    display: inline-block;
+    color: #afbbc1;
+    border-top: 1px solid transparent;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding-top: 4px;
+    margin: 15px 0px 0px 20px;
+}
+
+ul.main-nav li a:hover,
+ul.main-nav li a:active {
+    color: #ea503d;
+    border-color: #ea503d;
+}
+
+ul.main-nav li a.btn {
+    color: #fff;
+    border-color: #000;
+    text-transform: none;
+    position: relative;
+    top: -2px;
+}
