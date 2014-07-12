@@ -20,4 +20,14 @@ class Campaign < ActiveRecord::Base
   def left
     (self.end.to_date - Date.today.to_date).to_i
   end
+
+  def essay_html
+    markdown = RDiscount.new(self.body)
+    markdown.to_html
+  end
+
+  def essay_html_short
+    markdown = RDiscount.new(self.body.truncate(200))
+    markdown.to_html
+  end
 end

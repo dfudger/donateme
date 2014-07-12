@@ -53,7 +53,7 @@
                             <div class="wrap-short-detail">
                                 <h3 class="rs acticle-title"><a class="be-fc-orange" href="<%= campaign_path(@featured) %>"><%= @featured.user.name %></a></h3>
                                 <p class="rs tiny-desc">is accepted to <a href="<%= campaign_path(@featured) %>" class="fw-b fc-gray be-fc-orange"><%= @featured.school.name %></a><span class="fw-b fc-gray"></span></p>
-                                <p class="rs title-description"><%= @featured.body.truncate(800) %></p>
+                                <p class="rs title-description"><%=raw @featured.essay_html_short %></p>
                             </div>
                             <p class="rs clearfix comment-view">
                                 <span class="sep"></span>
@@ -120,7 +120,7 @@
                             </a>
                             <div class="wrap-short-detail">
                                 <h3 class="rs acticle-title"><a class="be-fc-orange" href="<%= campaign_path(@featured) %>"><%= campaign.user.name %></a></h3>
-                                <p class="rs title-description"><%= campaign.body.truncate(100) %></p>
+                                <p class="rs title-description"><%=raw campaign.essay_html_short %></p>
                                 <p class="rs project-location">
                                     <i class="icon iLocation"></i>
                                     New York, NY
