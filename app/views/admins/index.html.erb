@@ -39,7 +39,7 @@
           <% for image in campaign.images %>
             <tr>
               <td><%= image.url %></td>
-              <td><%= campaign.title %></td>
+              <td><%= campaign.user.name %></td>
               <td><%= link_to 'Edit', edit_campaign_image_path(campaign, image) %></td>
               <td><%= link_to 'Delete', campaign_image_path(campaign, image), :method => :delete %></td>
             </tr>
@@ -55,7 +55,7 @@
             <% for video in campaign.videos %>
               <tr>
                 <td><%= video.url %></td>
-                <td><%= campaign.title %></td>
+                <td><%= campaign.user.name %></td>
                 <td><%= link_to 'Edit', edit_campaign_video_path(campaign, video) %></td>
                 <td><%= link_to 'Delete', campaign_video_path(campaign, video), :method => :delete %></td>
               </tr>
@@ -70,7 +70,7 @@
       <tr>
         <td><%= school.name %></td>
         <td><%= link_to 'Edit', edit_school_path(school) %></td>
-        <td><%= link_to 'Delete', school_path(school), :confirm => "Are you sure you want to pernamently delete the campaign '#{campaign.title}'?", :method => :delete %></td>
+        <td><%= link_to 'Delete', school_path(school), :confirm => "Are you sure you want to pernamently delete the campaign '#{campaign.user.name}'?", :method => :delete %></td>
       </tr>
     <% end %>
   </table>
