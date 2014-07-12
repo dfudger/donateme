@@ -38,8 +38,8 @@
 <div class="home-feature-category" style="padding-left:10%; padding-right:10%;">
     <div class="container_12 clearfix" style="width:95%;">
         <% if @featured %>
-            <div  class="grid_13 marked-category" >
-                <div class="wrap-title clearfix" >
+            <div  class="grid_13 marked-category">
+                <div class="wrap-title clearfix">
                     <h2 class="title-mark rs">Staff Pick<span class="fc-orange">:</span></h2>
                 </div>
                 <div class="box-marked-project project-short">
@@ -47,13 +47,15 @@
                         <div class="content-info-short clearfix" >
                             <a href="<%= campaign_path(@featured) %>" class="thumb-img">
                                 <% if @featured.images.size > 0 %>
+                                    <div class="crop-img">
                                     <img src="<%= @featured.images.first.url %>" border="0" alt="<%= @featured.images.first.alt %>" >
+                                    </div>
                                 <% end %>
                             </a>
                             <div class="wrap-short-detail">
                                 <h3 class="rs acticle-title"><a class="be-fc-orange" href="<%= campaign_path(@featured) %>"><%= @featured.user.name %></a></h3>
                                 <p class="rs tiny-desc">is accepted to <a href="<%= campaign_path(@featured) %>" class="fw-b fc-gray be-fc-orange"><%= @featured.school.name %></a><span class="fw-b fc-gray"></span></p>
-                                <p class="rs title-description"><%=raw @featured.essay_html_short %></p>
+                                <p class="rs title-description"><%=raw @featured.essay_html(200) %></p>
                             </div>
                             <p class="rs clearfix comment-view">
                                 <span class="sep"></span>
@@ -115,12 +117,14 @@
                         <div class="content-info-short clearfix">
                             <a href="<%= campaign_path(campaign) %>" class="thumb-img thumb-avatar">
                                 <% if campaign.images.size > 0 %>
+                                    <div class="crop-img">
                                     <img src="<%= campaign.images.first.url %>" style='width: 100%;' border="0" alt="<%= campaign.images.first.alt %>" >
+                                    </div>
                                 <% end %>
                             </a>
                             <div class="wrap-short-detail">
                                 <h3 class="rs acticle-title"><a class="be-fc-orange" href="<%= campaign_path(@featured) %>"><%= campaign.user.name %></a></h3>
-                                <p class="rs title-description"><%=raw campaign.essay_html_short %></p>
+                                <p class="rs title-description"><%=raw campaign.essay_html(100) %></p>
                                 <p class="rs project-location">
                                     <i class="icon iLocation"></i>
                                     New York, NY

@@ -60,7 +60,7 @@
                                 <div class="editor-content">
                                     <h3 class="rs title-inside"><%= @campaign.user.name %></h3>
                                     <p class="rs post-by">by <a href="#" class="fw-b fc-gray be-fc-orange"><%= @campaign.user.name %></a> in <span class="fw-b fc-gray">New York, NY</span></p>
-                                    <p><%= @campaign.body %></p>
+                                    <p><%=raw @campaign.essay_html() %></p>
                                     <p>
                                        <!-- <img class="img-desc" src="images/ex/th-552x411-2.jpg" alt="$DESCRIPTION"/>
                                         <span class="img-label">Me and project friends on meeting</span>

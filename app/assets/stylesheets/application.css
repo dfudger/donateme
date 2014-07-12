@@ -23,6 +23,18 @@
  *= require_self
  */
 
+.crop-img {
+    overflow: hidden;
+}
+
+.top-project-info .crop-img {
+    height: 235px;
+}
+
+.lst-popular-project .crop-img {
+    height: 110px;
+}
+
 ul.main-nav {
     font-size: 13px;
     list-style: none;
