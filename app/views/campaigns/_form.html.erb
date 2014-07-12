@@ -1,52 +1,59 @@
 <div class="row">
+    <div class="small-12 large-6 columns">
+        <%= f.label :user %>
+        <%= collection_select(:campaign, :user_id, User.all, :id, :name) %>
+    </div>
 
-  <!--<div class="small-12 large-4 columns">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>-->
+    <div class="small-12 large-6 columns">
+        <%= f.label :gpa %>
+        <%= f.text_field :gpa %>
+    </div>
+</div>
 
-  <div class="small-12 large-4 columns">
-    <%= f.label :goal %>
-    <%= f.text_field :goal %>
-  </div>
+<div class="row">
+    <div class="small-12 large-6 columns">
+        <%= f.label :school %>
+        <%= collection_select(:campaign, :school_id, School.all, :id, :name) %>
+    </div>
 
-  <%= collection_select(:campaign, :school_id, School.all, :id, :name) %>
+    <div class="small-12 large-6 columns">
+        <%= f.label :goal %>
+        <%= f.text_field :goal %>
+    </div>
+</div>
 
-  <%= collection_select(:campaign, :user_id, User.all, :id, :name) %>
+<div class="row">
+    <div class="small-12 large-12 columns">
+        <%= f.label :start %>
+        <%= f.datetime_select :start, {
+            :ampm => true,
+            :minute_step => 15,
+            :datetime_separator => '<div class="small-2 columns"> &nbsp; </div>',
+            :time_separator => ""
+        }, {
+            :class => "small-2 datetime columns"
+        } %>
+    </div>
 
-  <div class="small-12 large-4 columns">
-    <%= f.label :body %>
-    <%= f.text_field :body %>
-  </div>
+    <div class="small-12 large-12 columns">
+        <%= f.label :end %>
+        <%= f.datetime_select :end,{
+            :ampm => true,
+            :minute_step => 15,
+            :datetime_separator => '<div class="small-2 columns"> &nbsp; </div>',
+            :time_separator => ""
+        }, {
+            :class => "small-2 datetime columns"
+        } %>
+    </div>
+</div>
 
-  <div class="small-12 large-4 columns">
-    <%= f.label :gpa %>
-    <%= f.text_area :gpa %>
-  </div>
+<div class="row">
 
-  <div class="small-12 large-4 columns">
-    <%= f.label :start %>
-    <%= f.datetime_select :start,
-      {
-        :ampm => true,
-        :minute_step => 15,
-        :datetime_separator => '<div class="small-4 columns"> &nbsp; </div>',
-        :time_separator => ""
-      }, {
-        :class => "small-4 datetime columns"
-      } %>
-  </div>
+        <br />
 
-  <div class="small-12 large-4 columns">
-    <%= f.label :end %>
-    <%= f.datetime_select :end,
-      {
-        :ampm => true,
-        :minute_step => 15,
-        :datetime_separator => '<div class="small-4 columns"> &nbsp; </div>',
-        :time_separator => ""
-      }, {
-        :class => "small-4 datetime columns"
-      } %>
-  </div>
+    <div class="small-12 large-12 columns">
+        <%= f.label :body %>
+        <%= f.text_area :body %>
+    </div>
 </div>

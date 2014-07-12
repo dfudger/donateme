@@ -1,13 +1,23 @@
-<div class="row">
-  <div class="small-12 columns">
-    <h1>Edit Campaign</h1>
-    <%= form_for :campaign, url: campaign_path(@campaign), method: :patch do |f| %>
+<div class="layout-2cols">
+    <div class="content grid_8">
+        <div class="single-page">
+            <div class="wrapper-box box-post-comment">
+                <h2 class="common-title">Edit Campaign</h2>
+                <div class="box-white">
+                    <%= form_for :campaign, url: campaign_path(@campaign), method: :patch do |f| %>
+                        <%= render :partial => "form", :locals => {:f => f} %>
 
-      <%= render :partial => "form", :locals => {:f => f} %>
+                        <p class="rs ta-r clearfix">
+                            <span id="response"></span>
 
-      <div>
-        <%= f.submit %>
-      </div>
-    <% end %>
-  </div>
+                                <br />
+
+                            <%= f.submit "Save", :class => 'btn btn-white btn-submit-comment' %>
+                        </p>
+                    <% end %>
+                </div>
+            </div><!--end: .box-list-comment -->
+        </div>
+    </div><!--end: .content -->
+    <div class="clear"></div>
 </div>
