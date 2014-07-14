@@ -87,12 +87,14 @@
             </div>
         </header><!--end: #header -->
 
+        <% if notice or alert %>
         <div class="row">
             <div class="small-12 columns">
                 <p class="notice"><%= notice %></p>
                 <p class="alert"><%= alert %></p>
             </div>
         </div>
+        <% end %>
 
         <%= yield %>
 

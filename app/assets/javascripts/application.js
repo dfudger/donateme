@@ -23,12 +23,12 @@
 //= require legacy/jquery.touchwipe.min.js
 //= require legacy/jquery.tweet.min.js
 //= require legacy/jquery.validate.min.js
+//= require legacy/raphael-min.js
 //= require legacy/md_slider.js
 //= require legacy/md_slider.min.js
 //= require legacy/pie.js
-//= require legacy/raphael-min.js
 //= require legacy/responsiveslides.min.js
-//= require legacy/script.js
 //= require legacy/selectnav.min.js
+//= require legacy/script.js
 //
 // require_tree .

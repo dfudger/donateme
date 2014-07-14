@@ -5,7 +5,10 @@
 # Websites:  http://www.megadrupal.com -  Email: info@megadrupal.com
 --------------------------------------------------------------------------*/
 
-$(document).ready(function() {
+var ready;
+ready = function() {
+
+
     var sys_show_popup_login = $(".sys_show_popup_login"),
         sys_popup_common = $("#sys_popup_common");
 
@@ -230,4 +233,7 @@ $(document).ready(function() {
     if ($("#sys-nav-menu-blog").length > 0) {
         selectnav("sys-nav-menu-blog");
     }
-});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
