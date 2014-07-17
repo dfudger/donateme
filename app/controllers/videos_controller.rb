@@ -1,4 +1,6 @@
 class VideosController < ApplicationController
+  before_filter :authenticate_admin!
+
   def new
     @campaign = Campaign.find(params[:campaign_id])
     @video = Video.new

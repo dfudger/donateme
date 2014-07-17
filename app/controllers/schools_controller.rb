@@ -1,4 +1,6 @@
 class SchoolsController < ApplicationController
+  before_filter :authenticate_admin!
+
   def new
     @school = School.new
   end

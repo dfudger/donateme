@@ -1,4 +1,6 @@
 class ImagesController < ApplicationController
+  before_filter :authenticate_admin!
+
   def new
     @campaign = Campaign.find(params[:campaign_id])
     @image = Image.new

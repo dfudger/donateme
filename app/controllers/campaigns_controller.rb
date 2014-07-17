@@ -1,4 +1,6 @@
 class CampaignsController < ApplicationController
+  before_filter :authenticate_admin!, :except => [:index, :show]
+  
   def new
     @campaign = Campaign.new
   end
