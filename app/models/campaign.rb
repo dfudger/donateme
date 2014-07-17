@@ -5,10 +5,6 @@ class Campaign < ActiveRecord::Base
   has_many :videos
   has_many :images
 
-  def progress
-    ((self.pledged / self.goal)*100).to_i
-  end
-
   def backers
     self.donations.size
   end
@@ -29,5 +25,9 @@ class Campaign < ActiveRecord::Base
     end
 
     markdown.to_html
+  end
+
+  def progress
+    ((self.pledged/(1.0*self.goal))*100).to_i
   end
 end
