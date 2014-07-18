@@ -5,10 +5,22 @@
                 <h2 class="common-title">New Donation</h2>
                 <div class="box-white">
                     <%= form_for :donation, url: campaign_donations_path(@campaign) do |f| %>
-                        <%= render :partial => "form", :locals => {:f => f} %>
+                        <div class="row">
+                          <div class="small-12 large-4 columns">
+                            <%= f.label :amount %>
+                            <%= f.text_field :amount %>
+                          </div>
+
+                        </div>
+
                         <p class="rs ta-r clearfix">
-                            <span id="response"></span>
-                            <%= f.submit "Submit", :class => 'btn btn-white btn-submit-comment' %>
+                            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                  data-image="<%= asset_path('donate_logo_square.png') %>"
+                                  data-name="DonateMe"
+                                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                                  data-description="<%= @campaign.user.name %>"
+                                  data-email="<%= current_user.email %>"
+                                  data-amount="500"></script>
                         </p>
                     <% end %>
                 </div>
