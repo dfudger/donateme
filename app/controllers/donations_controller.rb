@@ -9,6 +9,7 @@ class DonationsController < ApplicationController
   def create
   	@campaign = Campaign.find(params[:campaign_id])
     @donation = Donation.new(params[:donation].permit(:amount))
+    @donation.amount = @donation.amount*100
     @donation.campaign = @campaign
     @donation.user = current_user
 

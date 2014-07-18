@@ -6,26 +6,44 @@
                 <div class="box-white">
                     <%= form_for :donation, url: campaign_donations_path(@campaign) do |f| %>
                         <div class="row">
-                          <div class="small-12 large-4 columns">
-                            <%= f.label :amount %>
-                            <%= f.text_field :amount %>
+                          <div class="small-12 large-6 columns">
+                              <h3>Campaign</h3>
+                              <ul>
+                                  <li><strong>Name:</strong> <%= @campaign.user.name %></li>
+                                  <li><strong>School:</strong> <%= @campaign.school.name %></li>
+                                  <li><strong>Goal:</strong> <%= number_to_currency(@campaign.goal) %></li>
+                              </ul>
                           </div>
 
-                        </div>
+                          <div class="small-12 large-6 columns">
+                              <h3>Donation</h3>
 
-                        <p class="rs ta-r clearfix">
+                            <%= f.label :amount, "Donation amount, in dollars" %>
+                            <%= f.text_field :amount, :value => 10 %>
+
+                            <p class="rs ta-r clearfix">
                             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                                   data-image="<%= asset_path('donate_logo_square.png') %>"
                                   data-name="DonateMe"
                                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                                   data-description="<%= @campaign.user.name %>"
-                                  data-email="<%= current_user.email %>"
-                                  data-amount="500"></script>
-                        </p>
+                                  data-email="<%= current_user.email %>"></script>
+                              </p>
+
+                          </div>
+
+                        </div>
                     <% end %>
                 </div>
             </div><!--end: .box-list-comment -->
         </div>
     </div><!--end: .content -->
+    <div class="clear"></div>
+    <div class="content grid_8">
+        <div class="box-gray">
+            <h3>Terms of use</h3>
+            <p>Donate me has verified that each student is in the top 25% of his or her class by GPA and / or SAT or ACT scores. All Donate Me funds are given directory to students' universities. This way, We can be sure that all funds are allocated as promised. In the case that a student takes a leave of absence from the university, Donate Me will not be responsible for redeeming funds and returning these funds to donors. Donate Me is currently pending non-profit status. While DM operates as a non-profit , we cannot guarantee a tax write-off on donations until non-profit status is approved.</p>
+        </div>
+    </div>
     <div class="clear"></div>
 </div>
