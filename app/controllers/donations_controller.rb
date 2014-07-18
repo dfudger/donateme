@@ -13,12 +13,12 @@ class DonationsController < ApplicationController
     @donation.user = current_user
 
     customer = Stripe::Customer.create(
-      :email => current_fan.email,
+      :email => current_user.email,
       :card  => params[:stripeToken]
     )
 
     charge = Stripe::Charge.create(
-      :customer    => current_user.id,
+      :customer    => customer.id,
       :amount      => @donation.amount,
       :description => 'Donation #'+@donation.id.to_s,
       :currency    => 'usd'
@@ -30,7 +30,7 @@ class DonationsController < ApplicationController
     redirect_to campaign_path(@campaign)
 
   rescue Stripe::CardError => e
-    @ticket.destroy
+    @donation.destroy
 
     flash[:error] = e.message
     redirect_to campaign_path(@campaign)
