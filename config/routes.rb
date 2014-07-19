@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   get '/about', to: 'welcome#about'
   get '/policy', to: 'welcome#policy'
   get '/team', to: 'welcome#team'
+  get '/beta', to: 'welcome#beta'
 end
