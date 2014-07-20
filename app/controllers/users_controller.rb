@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_admin!
+  before_filter :authenticate_admin!, :except => [ :index ]
 
   def new
     @user = User.new
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @donations = current_user.donations
   end
 
   def show
