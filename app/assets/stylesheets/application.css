@@ -23,16 +23,39 @@
  *= require_self
  */
 
+#error_explanation {
+    border: 3px solid #c0392b;
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 5px 10px 0px 10px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 0px #c0392b;
+}
+#error_explanation h3 {
+    color: white;
+    line-height: 1em;
+}
+
 .crop-img {
-    overflow: hidden;
+    background-color: black;
 }
 
 .top-project-info .crop-img {
-    height: 235px;
+    height: 315px;
 }
 
 .lst-popular-project .crop-img {
-    height: 110px;
+    height: 270px;
+}
+
+.content-info-short .thumb-img .crop-img img,
+.crop-img img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: auto;
 }
 
 ul.main-nav {

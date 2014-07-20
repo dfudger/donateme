@@ -7,8 +7,11 @@ class SchoolsController < ApplicationController
 
   def create
     @school = School.new(params[:school].permit(:name))
-    @school.save
-    redirect_to admins_path
+    if @school.save
+      redirect_to admins_path
+    else
+      render "new"
+    end
   end
 
   def edit

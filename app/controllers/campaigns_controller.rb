@@ -1,6 +1,6 @@
 class CampaignsController < ApplicationController
   before_filter :authenticate_admin!, :except => [:index, :show]
-  
+
   def new
     @campaign = Campaign.new
   end
@@ -8,9 +8,12 @@ class CampaignsController < ApplicationController
   def create
     @campaign = Campaign.new(params[:campaign].permit(:goal, :start, :end, :gpa, :body, :user_id, :school_id))
     @campaign.user = current_user
-    @campaign.title = current_user.name
-    @campaign.save
-    redirect_to admins_path
+    @campaign.title = current_user.name    
+    if @campaign.save
+      redirect_to admins_path
+    else
+      render "new"
+    end
   end
 
   def update

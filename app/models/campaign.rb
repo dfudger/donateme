@@ -5,6 +5,12 @@ class Campaign < ActiveRecord::Base
   has_many :videos
   has_many :images
 
+  validates :goal, :presence => true
+  validates :start, :presence => true
+  validates :end, :presence => true
+  validates :body, :presence => true
+
+
   def backers
     self.donations.size
   end

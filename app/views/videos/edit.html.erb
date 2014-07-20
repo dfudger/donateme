@@ -1,7 +1,9 @@
 <div class="row">
   <div class="small-12 columns">
     <h1>Edit Video</h1>
-    <%= form_for :video, url: campaign_videos_path(@campaign), method: :patch do |f| %>
+    <%= render :partial => 'shared/errors', :locals => { :item => @video } %>
+
+    <%= form_for :video, url: campaign_video_path(@campaign, @video), method: :patch do |f| %>
 
       <%= render :partial => "form", :locals => {:f => f} %>
 

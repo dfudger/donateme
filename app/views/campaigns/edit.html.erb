@@ -4,6 +4,8 @@
             <div class="wrapper-box box-post-comment">
                 <h2 class="common-title">Edit Campaign</h2>
                 <div class="box-white">
+                    <%= render :partial => 'shared/errors', :locals => { :item => @campaign } %>
+
                     <%= form_for :campaign, url: campaign_path(@campaign), method: :patch do |f| %>
                         <%= render :partial => "form", :locals => {:f => f} %>
 

@@ -4,6 +4,8 @@
             <div class="wrapper-box box-post-comment">
                 <h2 class="common-title">New Image</h2>
                 <div class="box-white">
+                    <%= render :partial => 'shared/errors', :locals => { :item => @image } %>
+
                     <%= form_for :image, url: campaign_images_path(@campaign) do |f| %>
                         <%= render :partial => "form", :locals => {:f => f} %>
                         <p class="rs ta-r clearfix">

@@ -4,14 +4,14 @@
             <div class="wrapper-box box-post-comment">
                 <h2 class="common-title">New Campaign</h2>
                 <div class="box-white">
+                    <%= render :partial => 'shared/errors', :locals => { :item => @campaign } %>
+
                     <%= form_for :campaign, url: campaigns_path do |f| %>
                         <%= render :partial => "form", :locals => {:f => f} %>
 
                         <p class="rs ta-r clearfix">
                             <span id="response"></span>
-
-                                <br />
-
+                            <br />
                             <%= f.submit "Submit", :class => 'btn btn-white btn-submit-comment' %>
                         </p>
                     <% end %>

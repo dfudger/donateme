@@ -1,0 +1,10 @@
+<% if item.errors.any? %>
+<div id="error_explanation">
+    <h3>Almost! It's just missing something:</h3>
+    <ul>
+      <% item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+</div>
+<% end %>

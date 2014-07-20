@@ -10,8 +10,12 @@ class ImagesController < ApplicationController
     @campaign = Campaign.find(params[:campaign_id])
     @image = Image.new(params[:image].permit(:url))
     @image.campaign = @campaign
-    @image.save
-    redirect_to admins_path
+
+    if @image.save
+      redirect_to admins_path
+    else
+      render 'new'
+    end
   end
 
   def edit

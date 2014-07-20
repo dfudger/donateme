@@ -1,7 +1,10 @@
 <div class="row">
   <div class="small-12 columns">
     <h1>Edit Image</h1>
-    <%= form_for :image, url: campaign_images_path(@campaign), method: :patch do |f| %>
+
+    <%= render :partial => 'shared/errors', :locals => { :item => @image } %>
+
+    <%= form_for :image, url: campaign_image_path(@campaign, @image), method: :patch do |f| %>
 
       <%= render :partial => "form", :locals => {:f => f} %>
 
