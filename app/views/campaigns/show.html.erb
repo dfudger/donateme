@@ -1,7 +1,10 @@
     <div class="layout-2cols">
         <div class="content grid_8">
             <div class="project-detail">
-                <h1 class="rs project-title"><strong><%= @campaign.user.name %></strong><br /><%= @campaign.school.name %><br /><%= number_to_currency(@campaign.goal/100, :precision => 0) %></h1>
+                <h1 class="rs project-title">
+                    <strong><%= @campaign.user.name %></strong>
+                    <br /><%= @campaign.school.name %>
+                    <br />Goal: <%= number_to_currency(@campaign.goal/100, :precision => 0) %></h1>
 
                 <div class="project-short big-thumb">
                     <div class="top-project-info">
