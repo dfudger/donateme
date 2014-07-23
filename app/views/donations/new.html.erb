@@ -13,7 +13,7 @@
                               <ul>
                                   <li><strong>Name:</strong> <%= @campaign.user.name %></li>
                                   <li><strong>School:</strong> <%= @campaign.school.name %></li>
-                                  <li><strong>Goal:</strong> <%= number_to_currency(@campaign.goal) %></li>
+                                  <li><strong>Goal:</strong> <%= number_to_currency(@campaign.goal/100) %></li>
                               </ul>
                           </div>
 
