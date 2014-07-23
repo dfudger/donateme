@@ -1,11 +1,12 @@
     <div class="layout-2cols">
         <div class="content grid_8">
             <div class="project-detail">
-                <h1 class="rs project-title">
-                    <strong><%= @campaign.user.name %></strong>
-                    <br /><%= @campaign.school.name %>
-                    <br />Goal: <%= number_to_currency(@campaign.goal/100, :precision => 0) %></h1>
 
+                <h1 class="rs project-title"><strong><%= @campaign.user.name %></strong></h1>
+                <h3 class="reduce_space" style="padding-top: 0px;"><p class="rs post-by" style="padding: 0px;"><strong><%= @campaign.school.name %></strong></p></h3>
+                <h3 class="reduce_space" style="padding-top: 0px;"><p class="rs post-by" style="padding: 0px;"><strong>Goal: <%= number_to_currency(@campaign.goal/100, :precision => 0) %></strong></p></h3>
+                <p class="rs post-by"></p>
+                
                 <div class="project-short big-thumb">
                     <div class="top-project-info">
                         <div class="content-info-short clearfix">
