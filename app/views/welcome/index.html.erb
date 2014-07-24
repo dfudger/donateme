@@ -77,7 +77,7 @@
                             <div class="sep"></div>
                             <div class="fee-item">
                                 <p class="rs lbl">Pledged</p>
-                                <span class="val">$<%= @featured.pledged %></span>
+                                <span class="val"><%= number_to_currency(@featured.pledged/100) %></span>
                             </div>
                             <div class="sep"></div>
                             <div class="fee-item">
@@ -150,7 +150,7 @@
                             <div class="fee-item">
                                 <p class="rs lbl">Pledged</p>
 
-                                <span class="val">$<%= campaign.pledged %></span>
+                                <span class="val"><%= number_to_currency(campaign.pledged/100) %></span>
                             </div>
                             <div class="sep"></div>
                             <div class="fee-item">
